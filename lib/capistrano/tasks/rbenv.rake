@@ -4,7 +4,7 @@ end
 
 SSHKit.config.command_map = Hash.new do |hash, key|
   map_bins = fetch(:rbenv_map_bins)
-  if map_bin.present? and map_bins.include?(key.to_s)
+  if map_bins.present? and map_bins.include?(key.to_s)
     prefix = "RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
     hash[key] = if bundler_loaded? && key.to_s != "bundle"
       "#{prefix} bundle exec #{key}"
