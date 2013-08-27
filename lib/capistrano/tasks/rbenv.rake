@@ -1,3 +1,5 @@
+require "active_support/core_ext/object/blank.rb"
+
 def bundler_loaded?
   Gem::Specification::find_all_by_name('capistrano-bundler').any?
 end
